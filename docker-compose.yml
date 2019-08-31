@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  janus:
+    build: ./janus
+    volumes:
+      - ./janus/config:/config
+    ports:
+      - "7088:7088"
+      - "8088:8088"
+      - "8188:8188"
+      - "8089:8089"
+    command: /config/start.sh
