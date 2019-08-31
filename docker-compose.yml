@@ -3,7 +3,8 @@ services:
   janus:
     build: ./janus
     environment:
-      - "MEDIA_RTP_PORT_RANGE=$MEDIA_RTP_PORT_RANGE"
+      MEDIA_RTP_PORT_RANGE: $MEDIA_RTP_PORT_RANGE
+      ADMIN_SECRET: $ADMIN_SECRET
     volumes:
       - ./janus/config:/config
       - ./data/janus:/record
