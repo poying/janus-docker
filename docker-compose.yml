@@ -7,7 +7,7 @@ services:
       ADMIN_SECRET: $ADMIN_SECRET
     volumes:
       - ./janus/config:/config
-      - ./data/janus:/record
+      - ./data/janus:/data
     ports:
       - "7088:7088"
       - "8088:8088"
