@@ -13,4 +13,7 @@ sed -i -E "s/#?rtp_port_range *=.*/rtp_port_range = \"${MEDIA_RTP_PORT_RANGE}\"/
 # change admin secret
 sed -i -E "s/#?admin_secret *=.*/admin_secret = \"${ADMIN_SECRET}\"/g" /opt/janus/etc/janus/janus.jcfg;
 
+# enable token validation
+sed -i -E "s/#?token_auth *=.*/token_auth = true/g" /opt/janus/etc/janus/janus.jcfg;
+
 janus --nat-1-1=$DOCKER_IP;
