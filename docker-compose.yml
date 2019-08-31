@@ -2,8 +2,11 @@ version: "3.7"
 services:
   janus:
     build: ./janus
+    environment:
+      - "MEDIA_RTP_PORT_RANGE=$MEDIA_RTP_PORT_RANGE"
     volumes:
       - ./janus/config:/config
+      - ./data/janus:/record
     ports:
       - "7088:7088"
       - "8088:8088"
