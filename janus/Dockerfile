@@ -32,6 +32,4 @@ ENV PATH "/opt/janus/bin:${PATH}"
 
 EXPOSE 7088 8088 8188 8089
 
-EXPOSE 10000-10200/udp
-
 CMD janus --nat-1-1=${DOCKER_IP}
